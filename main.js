@@ -256,7 +256,6 @@ gsap.to('.tp-text', {
     trigger: '.tp-text',
     start: 'top 450px',
     end: 'top 80px',
-    markers: true,
     scrub: 1
   },
   rotation: 0,
