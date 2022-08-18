@@ -262,23 +262,32 @@ gsap.to('.tp-text', {
   opacity: 1
 })
 
- /*
+
 ///////////////MAIL///////////////////
  
-const form = document.querySelector('.contact_form'),
-      name = document.querySelector('.contact_name'),
-      email = document.querySelector('.contact_email'),
-      msg = document.querySelector('.contact_msg')
+
 
 ///////////// FUNCTION SEND //////////////
 
-Email.send({
+const form = document.querySelector('.contact_form');
+
+function sendMsg(e) {
+  e.preventDefault();
   
-  SecureToken : "C973D7AD-F097-4B95-91F4-40ABC5567812",
-  To : 'them@website.com',
-  From : "you@isp.com",
-  Subject : "This is the subject",
-  Body : "And this is the body"
-}).then(
-message => alert(message)
-);*/
+      name = document.querySelector('.contact_name')
+      email = document.querySelector('.contact_email'),
+      msg = document.querySelector('.contact_msg');
+
+      Email.send({
+  
+        SecureToken : "35805f78-e658-45d5-be9a-ad8022fcf753",
+        To : 'civitao011@gmail.com',
+        From : email.value,
+        Subject : "Portfolio Contact",
+        Body : msg.value
+      }).then(
+      message => alert('Email Sent!')
+      );
+
+} 
+form.addEventListener('submit', sendMsg);
